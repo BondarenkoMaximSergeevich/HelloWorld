@@ -3,6 +3,7 @@
     <device id="retina6_9" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -23,18 +24,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ykm-SP-PPT">
-                                <rect key="frame" x="131.66666666666669" y="533.66666666666663" width="176.66666666666669" height="42.666666666666629"/>
+                                <rect key="frame" x="143.66666666666666" y="535.33333333333337" width="152.99999999999997" height="41"/>
+                                <color key="backgroundColor" name="AccentColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="152.99999999999997" id="aLB-Jk-GRy"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="tintColor" name="AccentColor"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Show Greeting"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Show Greeting" cornerStyle="capsule">
-                                    <fontDescription key="titleFontDescription" type="system" pointSize="24"/>
-                                </buttonConfiguration>
+                                <state key="normal" title="Show Greeting">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                </state>
                                 <connections>
-                                    <action selector="greetingButtonDidTup:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Vf-mH-KEd"/>
+                                    <action selector="greetingButtonDidTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="7Kq-HK-n2S"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -49,6 +51,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="greetingButton" destination="Ykm-SP-PPT" id="iAb-eO-UVe"/>
                         <outlet property="greetingLabel" destination="daw-tm-LBb" id="3Xp-7y-Ue6"/>
                     </connections>
                 </viewController>
@@ -58,6 +61,12 @@
         </scene>
     </scenes>
     <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
